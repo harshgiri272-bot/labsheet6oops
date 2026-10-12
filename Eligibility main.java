@@ -1,0 +1,21 @@
+public class EligibilityMain {
+    public static void main(String[] args) {
+        Medicine medicine = new Medicine("Adult Medicine", 18);
+        System.out.println("Age 20: " + medicine.checkEligibility(20));
+        System.out.println("Age 15: " + medicine.checkEligibility(15));
+    }
+}
+class Medicine {
+    String medicineName;
+    int ageLimit;
+    Medicine(String medicineName, int ageLimit) {
+        this.medicineName = medicineName;
+        this.ageLimit = ageLimit;
+    }
+    String checkEligibility(int patientAge) {
+        String result;
+        if (patientAge >= ageLimit) result = "Eligible";
+        else result = "Not Eligible";
+        return result;
+    }
+}
